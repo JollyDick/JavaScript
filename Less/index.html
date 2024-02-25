@@ -198,13 +198,13 @@
   // який,за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється
   // falsy (хибноподібні, тобто приводиться до false)
   document.write('<br>');
-  let typeX = false;
+  let typeX = 'sss';
 
-  if ( typeof typeX === 'string' || typeof typeX === 'number' || typeof typeX === undefined
-    || typeof typeX === null || typeX === true ) {
+  if ( typeof typeX == 'string' || typeof typeX == 'number' || typeof typeX == undefined
+    || typeof typeX == null || typeX == true ) {
     document.write('default');
   }
-  else if ( typeX === false ) {
+  else if ( typeX == false ) {
     document.write('false');
   }
 
@@ -240,13 +240,6 @@
 
 
 </script>
-
-
-
-
-</body>
-
-</html>
 
 
 
