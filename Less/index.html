@@ -23,277 +23,462 @@ h1 {
 
 <body>
 
-<!-- Less 3-->
+
+<!-- Less 4-->
 <script>
-  // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
-  for (let i = 0; i < 10; i++) {
-    document.write('<div> Lorem</div>');
+  document.write(`<h1>Lesson 4-5</h1>`)
+  document.write(`- створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б  - `);
 
-  }
-  document.write(`<br>`);
+  function S(a, b) {
 
-  //   - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
-  for (let i = 0; i < 10; i++) {
-    document.write(`<div> Lorem ${i}</div>`);
-
+    let value = a * b;
+    return value;
   }
 
-  //   - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
-  let task3 = 0;
-  while (task3 < 20) {
-    document.write("<h1>Lorem</h1>");
-    task3++;
+  let a = 5;
+  let b = 10;
+  let value = S(a, b);
+  document.write(value);
+
+  document.write(`<br> - створити функцію яка обчислює та повертає площу кола з радіусом r - `)
+
+  function circleRadius(r) {
+
+    let circleS = 3.14 * r * r;
+
+    return circleS;
+  }
+
+  let radius = 5;
+  let circleS = circleRadius(radius);
+  document.write(circleS);
+
+
+document.write(`<br>- створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r - `);
+  function cylinderS (h, r) {
+    let ValueCylinderS = 2 * 3.14 * r * (r + h);
+    return ValueCylinderS;
 
   }
-  document.write(`<br>`);
 
-  //   - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
-  let task4 = 0;
-  while (task4 < 20) {
-    document.write(`<h1>Lorem ${task4}</h1>`);
-    task4++;
+  let hCyl = 4;
+  let rCyl = 5;
+  let ValueCylinderS = cylinderS (hCyl,rCyl);
+  document.write(ValueCylinderS);
+
+  document.write(`<br>- створити функцію яка приймає масив та виводить кожен його елемент - `);
+
+  function writeArray(array) {
+    for (let i = 0; i < array.length; i++) {
+      document.write(array[i]);
+    }
+  }
+
+  let ArrayLes4part4 = [1, 2, 3, 4, 5];
+  writeArray(ArrayLes4part4);
+
+  document.write(`<br> - створити функцію яка створює параграф з текстом. Текст задати через аргумент<br>`);
+
+  function pArgum (){
+    for (let i = 0; i < arguments.length; i++) {
+
+      document.write(arguments[i]);
+    }
 
   }
-  document.write(`<br>`);
 
-  //   - Використовуючи данні з масиву, за допомоги document.write та циклу побудувати структуру по шаблонуМасив:
+  pArgum("Lorem", " Lorem1", " Lorem2", " Lorem3");
 
-  document.write("<ul>");
-  let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-  for (let i = 0; i < listOfItems.length; i++) {
+  document.write(`<br> - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий`);
 
-    document.write("<li>" + listOfItems[i] + "</li>");
+  function CreateUl(text) {
+    document.write("<ul>");
+    for (let i = 0; i < 3; i++) {
+      document.write("<li>" + text + "</li>" );
+    }
+    document.write("</ul>");
+
   }
-  document.write("</ul>");
 
-  //   Використовуючи данні з масиву, за допомоги document.write та циклу побудувати структуру по шаблону Великими
-  //  літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
+  let Text = "вапва апвапвап вапвпвап вапп 34";
+  CreateUl(Text);
 
-  let products = [
-    {
-      title: 'milk',
-      price: 22,
-      image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
-    },
-    {
-      title: 'juice',
-      price: 27,
-      image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
-    },
-    {
-      title: 'tomato',
-      price: 47,
-      image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
-    },
-    {
-      title: 'tea',
-      price: 15,
-      image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
-    },
+  document.write(`<br>
+- створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li
+ визначається другим аргументом, який є числовим (тут використовувати цикл)`);
+
+  function CreateUlcount(text, count) {
+    document.write("<ul>");
+    for (let i = 0; i < count; i++) {
+      document.write("<li>" + text + "</li>" );
+    }
+    document.write("</ul>");
+
+  }
+
+  let textTwo = "вапва апвапвап вапвпвап вапп 34";
+  let itemCount = 3;
+  CreateUlcount(textTwo,itemCount);
+
+  document.write(`<br>- створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список`);
+
+  function ArrText(myArray) {
+    document.write("<ul>");
+    for (let i = 0; i < myArray.length; i++) {
+      document.write("<li>" + myArray[i] + "</li>" );
+    }
+    document.write("</ul>");
+
+  }
+
+  let myArray = [1, "hello", true];
+  ArrText(myArray);
+
+  document.write(`<br>- створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в
+документ. Для кожного об'єкту окремий блок`);
+
+  function UserBlock(){
+    for (let i = 0; i < objectsArray.length; i++) {
+
+      document.write(`<div>ID: ${objectsArray[i].id}, Name: ${objectsArray[i].name}, Age: ${objectsArray[i].age}</div>`);
+    }
+
+  }
+
+  let objectsArray = [
+    { id: 1, name: "Vasya", age: 20 },
+    { id: 2, name: "Anya", age: 30 },
+    { id: 3, name: "Dima", age: 40 }
   ];
 
-  for (let product of products) {
+  UserBlock(objectsArray);
 
-    document.write(`<div class="product-card">
-                      <h3 class="product-title">${product.title}. Price - ${product.price}</h3>
-                      <img src="${product.image}" class="product-image" alt="${product.title}">
-                     </div>`);
+  document.write(`<br>- створити функцію яка повертає найменьше число з масиву - `)
+  function findMinNumber(array) {
+
+    return Math.min(...array);
   }
 
-  //   за допомоги циклу вивести:- користувачів зі статусом true - користувачів зі статусом false - користувачів які
-  // старші за 30 років
+  let numbersArr = [40, 20, 8, 19, 3, -10];
+  let minNumber = findMinNumber(numbersArr);
+  document.write(minNumber);
 
-  let users = [
-    {name: 'vasya', age: 31, status: false},
-    {name: 'petya', age: 30, status: true},
-    {name: 'kolya', age: 29, status: true},
-    {name: 'olya', age: 28, status: false},
-    {name: 'max', age: 30, status: true},
-    {name: 'anya', age: 31, status: false},
-    {name: 'oleg', age: 28, status: false},
-    {name: 'andrey', age: 29, status: true},
-    {name: 'masha', age: 30, status: true},
-    {name: 'olya', age: 31, status: false},
-    {name: 'max', age: 31, status: true}
-  ];
-
-  for ( let user of users) {
-    if (user.status === true) {
-      document.write(`<h2>Користувачі зі статусом true: ${user.name} ${user.age} років</h2>`);
-    }
-
-  }
-document.write(`<br>`)
-  for ( let user of users) {
-    if (user.status === false) {
-      document.write(`<h2>Користувачі зі статусом false: ${user.name} ${user.age} років</h2>`);
-    }
-
-  }
- document.write(`<br>`)
-
-  for ( let user of users) {
-    if (user.age >= 30) {
-      document.write(`<h2>Користувачі від 30 років: ${user.name} ${user.age} років</h2>`);
-    }
-
-  }
-
-// ADD 3
-// заповнити його 50 парними числами за допомоги циклу.
-  let task1add3 = []
-  for (let i = 2; task1add3 < 50; i++) {
-    if (i % 2 === 0) {
-      document.write(i + ', ');
-      task1add3++;
-    }
-
-  }
-document.write(`<br>`)
-// заповнити його 50 непарними числами за допомоги циклу.
-  let task2add3 = []
-  for (let i = 1; task2add3 < 50; i++) {
-    if (i % 2 === 1) {
-      document.write(i + ', ');
-      task2add3++;
-    }
-
-  }
-  document.write(`<br>`);
+  document.write(`- створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його.
+  Приклад sum([1,2,10]) //->13 <br>`);
 
 
-  // Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
-
-  let task3add3 = [];
-  for (let i = 0; i < 20; i++) {
-    let randomNumber = Math.floor(Math.random() * 100);
-    task3add3[i] = randomNumber;
-    document.write(randomNumber + ', ');
-  }
-
-  // Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
-
-  let task4add3 = [];
-  for (let i = 0; i < 20; i++) {
-    let randomNumber = Math.floor(Math.random() *(732 - 8)); // Генеруємо випадкове число від 0 до 100
-    task4add3[i] = randomNumber;
-    document.write(randomNumber + ', ');
-  }
-  document.write(`<br>`);
-
-//   Вивести за допомогою console.log кожен третій елемен
-  //   !!!! let i = 2; i < 20; i += 3 !!!
-
-
-
-//   Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним.
-  //   !!!! let i = 2; i < 20; i += 3 !!!
-  //   if (i % 2 === 0)
-
-
-// Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним та записати їх в новий масив
-
-  let Arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  let Arr2 = [];
-
-  for (let i = 2; i < Arr1.length; i += 3) {
-    if (Arr1[i] % 2 === 0) {
-      Arr2[Arr2.length++] = Arr1[i];
+  function sumArr (){
+    let sum = 0;
+    for (let element of Arr) {
+      sum += element;
 
     }
-
-  }
-  console.log(Arr2);
-//   Вивести кожен елемент масиву, сусід справа якого є парним
-  let Arr3 = [1, 2, 3, 5, 7, 9, 56, 8, 67];
-
-  for (let i = 0; i < Arr3.length; i++) {
-    if (Arr3[i + 1] % 2 === 0) {
-      console.log(Arr3[i]);
-
-    }
-
-  }
-//   Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
-  let Arr4 = [100,250,50,168,120,345,188];
-  let sum = 0;
-  for (let element of Arr4) {
-    sum += element;
+    document.write(sum);
   }
 
-  console.log(sum/Arr4.length);
+  let Arr = [1,2,10, 20,50 ];
+  sumArr(Arr);
 
-//   Створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
+  document.write(`<br> створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах `);
+  function swap (arr){
+      let firstIndex = arr[0];
+      arr[0]  = arr[1];
+      arr[1] = firstIndex;
 
-  let ArrRandom = [];
-  let ArrRandom2 = [];
-
-  for (let i = 0; i < 4; i++) {
-    let randomNumber = (Math.floor(Math.random() * 100))*5;
-    ArrRandom[i] = randomNumber;
-    console.log(randomNumber);
-    ArrRandom2 [ArrRandom2.length] = ArrRandom[i];
-
+      return arr;
   }
-  console.log(ArrRandom2);
 
-//   8. Створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо елемент є числом - додати його в інший масив.
+  arrSwap = [11, 33, 50,70];
+  document.write(swap(arrSwap));
 
-  let ArrRandom3 = [222, 'Lorem', false, 345, null, 'Ipsun', 111];
-  let ArrRandom4 = [];
-    for (let element of ArrRandom3) {
-      if ( typeof element === 'number') {
-        ArrRandom4[ArrRandom4.length] = element;
+  document.write(`<br> Написати функцію обміну валюти exchange `);
 
+  function exchange (sumUAH,currencyValues,exchangeCurrency){
+    let exchangeRate;
+    for (let i = 0; i < currencyValues.length; i++) {
+      if (currencyValues[i].currency === exchangeCurrency) {
+        exchangeRate = currencyValues[i].value;
       }
+      }
+
+    let resultUAH = sumUAH / exchangeRate;
+    document.write(resultUAH)
+
   }
-  console.log(ArrRandom4);
 
-//     З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" . Записати цей об'єкт в новий масив
+  exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
-  let usersWithId = [
-    {id: 1, name: 'vasya', age: 31, status: false},
-    {id: 2, name: 'petya', age: 30, status: true},
-    {id: 3, name: 'kolya', age: 29, status: true},
-    {id: 4, name: 'olya', age: 28, status: false}
-  ];
-
-  let citiesWithId = [
-    {user_id: 3, country: 'USA', city: 'Portland'},
-    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-    {user_id: 2, country: 'Poland', city: 'Krakow'},
-    {user_id: 4, country: 'USA', city: 'Miami'}
-  ];
-
-   let UsersAndCities = []
+  document.write(`<h1>Lesson 5</h1>`)
 
 
-  for (let user of usersWithId) {
-   for ( let city of citiesWithId) {
-     if ( user.id === city.user_id) {
-
-       UsersAndCities[UsersAndCities.length] = {
-
-         id: user.id,
-         name: user.name,
-         age: user.age,
-         status: user.status,
-         country: city.country,
-         city: city.city
-       }
-
-     }
-
-   }
-
-    }
-  console.log(UsersAndCities);
-
+  //   // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
+  //   for (let i = 0; i < 10; i++) {
+  //     document.write('<div> Lorem</div>');
+  //
+  //   }
+  //   document.write(`<br>`);
+  //
+  //   //   - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
+  //   for (let i = 0; i < 10; i++) {
+  //     document.write(`<div> Lorem ${i}</div>`);
+  //
+  //   }
+  //
+  //   //   - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
+  //   let task3 = 0;
+  //   while (task3 < 20) {
+  //     document.write("<h1>Lorem</h1>");
+  //     task3++;
+  //
+  //   }
+  //   document.write(`<br>`);
+  //
+  //   //   - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
+  //   let task4 = 0;
+  //   while (task4 < 20) {
+  //     document.write(`<h1>Lorem ${task4}</h1>`);
+  //     task4++;
+  //
+  //   }
+  //   document.write(`<br>`);
+  //
+  //   //   - Використовуючи данні з масиву, за допомоги document.write та циклу побудувати структуру по шаблонуМасив:
+  //
+  //   document.write("<ul>");
+  //   let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+  //   for (let i = 0; i < listOfItems.length; i++) {
+  //
+  //     document.write("<li>" + listOfItems[i] + "</li>");
+  //   }
+  //   document.write("</ul>");
+  //
+  //   //   Використовуючи данні з масиву, за допомоги document.write та циклу побудувати структуру по шаблону Великими
+  //   //  літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
+  //
+  //   let products = [
+  //     {
+  //       title: 'milk',
+  //       price: 22,
+  //       image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+  //     },
+  //     {
+  //       title: 'juice',
+  //       price: 27,
+  //       image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+  //     },
+  //     {
+  //       title: 'tomato',
+  //       price: 47,
+  //       image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+  //     },
+  //     {
+  //       title: 'tea',
+  //       price: 15,
+  //       image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+  //     },
+  //   ];
+  //
+  //   for (let product of products) {
+  //
+  //     document.write(`<div class="product-card">
+  //                       <h3 class="product-title">${product.title}. Price - ${product.price}</h3>
+  //                       <img src="${product.image}" class="product-image" alt="${product.title}">
+  //                      </div>`);
+  //   }
+  //
+  //   //   за допомоги циклу вивести:- користувачів зі статусом true - користувачів зі статусом false - користувачів які
+  //   // старші за 30 років
+  //
+  //   let users = [
+  //     {name: 'vasya', age: 31, status: false},
+  //     {name: 'petya', age: 30, status: true},
+  //     {name: 'kolya', age: 29, status: true},
+  //     {name: 'olya', age: 28, status: false},
+  //     {name: 'max', age: 30, status: true},
+  //     {name: 'anya', age: 31, status: false},
+  //     {name: 'oleg', age: 28, status: false},
+  //     {name: 'andrey', age: 29, status: true},
+  //     {name: 'masha', age: 30, status: true},
+  //     {name: 'olya', age: 31, status: false},
+  //     {name: 'max', age: 31, status: true}
+  //   ];
+  //
+  //   for ( let user of users) {
+  //     if (user.status === true) {
+  //       document.write(`<h2>Користувачі зі статусом true: ${user.name} ${user.age} років</h2>`);
+  //     }
+  //
+  //   }
+  // document.write(`<br>`)
+  //   for ( let user of users) {
+  //     if (user.status === false) {
+  //       document.write(`<h2>Користувачі зі статусом false: ${user.name} ${user.age} років</h2>`);
+  //     }
+  //
+  //   }
+  //  document.write(`<br>`)
+  //
+  //   for ( let user of users) {
+  //     if (user.age >= 30) {
+  //       document.write(`<h2>Користувачі від 30 років: ${user.name} ${user.age} років</h2>`);
+  //     }
+  //
+  //   }
+  //
+  // // ADD 3
+  // // заповнити його 50 парними числами за допомоги циклу.
+  //   let task1add3 = []
+  //   for (let i = 2; task1add3 < 50; i++) {
+  //     if (i % 2 === 0) {
+  //       document.write(i + ', ');
+  //       task1add3++;
+  //     }
+  //
+  //   }
+  // document.write(`<br>`)
+  // // заповнити його 50 непарними числами за допомоги циклу.
+  //   let task2add3 = []
+  //   for (let i = 1; task2add3 < 50; i++) {
+  //     if (i % 2 === 1) {
+  //       document.write(i + ', ');
+  //       task2add3++;
+  //     }
+  //
+  //   }
+  //   document.write(`<br>`);
+  //
+  //
+  //   // Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
+  //
+  //   let task3add3 = [];
+  //   for (let i = 0; i < 20; i++) {
+  //     let randomNumber = Math.floor(Math.random() * 100);
+  //     task3add3[i] = randomNumber;
+  //     document.write(randomNumber + ', ');
+  //   }
+  //
+  //   // Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
+  //
+  //   let task4add3 = [];
+  //   for (let i = 0; i < 20; i++) {
+  //     let randomNumber = Math.floor(Math.random() *(732 - 8)); // Генеруємо випадкове число від 0 до 100
+  //     task4add3[i] = randomNumber;
+  //     document.write(randomNumber + ', ');
+  //   }
+  //   document.write(`<br>`);
+  //
+  // //   Вивести за допомогою console.log кожен третій елемен
+  //   //   !!!! let i = 2; i < 20; i += 3 !!!
+  //
+  //
+  //
+  // //   Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним.
+  //   //   !!!! let i = 2; i < 20; i += 3 !!!
+  //   //   if (i % 2 === 0)
+  //
+  //
+  // // Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним та записати їх в новий масив
+  //
+  //   let Arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  //   let Arr2 = [];
+  //
+  //   for (let i = 2; i < Arr1.length; i += 3) {
+  //     if (Arr1[i] % 2 === 0) {
+  //       Arr2[Arr2.length++] = Arr1[i];
+  //
+  //     }
+  //
+  //   }
+  //   console.log(Arr2);
+  // //   Вивести кожен елемент масиву, сусід справа якого є парним
+  //   let Arr3 = [1, 2, 3, 5, 7, 9, 56, 8, 67];
+  //
+  //   for (let i = 0; i < Arr3.length; i++) {
+  //     if (Arr3[i + 1] % 2 === 0) {
+  //       console.log(Arr3[i]);
+  //
+  //     }
+  //
+  //   }
+  // //   Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
+  //   let Arr4 = [100,250,50,168,120,345,188];
+  //   let sum = 0;
+  //   for (let element of Arr4) {
+  //     sum += element;
+  //   }
+  //
+  //   console.log(sum/Arr4.length);
+  //
+  // //   Створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
+  //
+  //   let ArrRandom = [];
+  //   let ArrRandom2 = [];
+  //
+  //   for (let i = 0; i < 4; i++) {
+  //     let randomNumber = (Math.floor(Math.random() * 100))*5;
+  //     ArrRandom[i] = randomNumber;
+  //     console.log(randomNumber);
+  //     ArrRandom2 [ArrRandom2.length] = ArrRandom[i];
+  //
+  //   }
+  //   console.log(ArrRandom2);
+  //
+  // //   8. Створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо елемент є числом - додати його в інший масив.
+  //
+  //   let ArrRandom3 = [222, 'Lorem', false, 345, null, 'Ipsun', 111];
+  //   let ArrRandom4 = [];
+  //     for (let element of ArrRandom3) {
+  //       if ( typeof element === 'number') {
+  //         ArrRandom4[ArrRandom4.length] = element;
+  //
+  //       }
+  //   }
+  //   console.log(ArrRandom4);
+  //
+  // //     З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" . Записати цей об'єкт в новий масив
+  //
+  //   let usersWithId = [
+  //     {id: 1, name: 'vasya', age: 31, status: false},
+  //     {id: 2, name: 'petya', age: 30, status: true},
+  //     {id: 3, name: 'kolya', age: 29, status: true},
+  //     {id: 4, name: 'olya', age: 28, status: false}
+  //   ];
+  //
+  //   let citiesWithId = [
+  //     {user_id: 3, country: 'USA', city: 'Portland'},
+  //     {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+  //     {user_id: 2, country: 'Poland', city: 'Krakow'},
+  //     {user_id: 4, country: 'USA', city: 'Miami'}
+  //   ];
+  //
+  //    let UsersAndCities = []
+  //
+  //
+  //   for (let user of usersWithId) {
+  //    for ( let city of citiesWithId) {
+  //      if ( user.id === city.user_id) {
+  //
+  //        UsersAndCities[UsersAndCities.length] = {
+  //
+  //          id: user.id,
+  //          name: user.name,
+  //          age: user.age,
+  //          status: user.status,
+  //          country: city.country,
+  //          city: city.city
+  //        }
+  //
+  //      }
+  //
+  //    }
+  //
+  //     }
+  //   console.log(UsersAndCities);
+  //
 
 </script>
 
 
-<!-- Less 2-->
 <script>
 
 //  // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
